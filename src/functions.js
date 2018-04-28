@@ -114,6 +114,60 @@ navList.appendChild(newulTag);
   // no return needed
 }
 
+// function addLink2( document ){
+
+//   var ulTag = document.createElement('ul'); //create ul tag
+//   ulTag.setAttribute("class", "navbar-nav mr-auto")
+
+//   var liTag = document.createElement('li'); //create li tag
+//   liTag.setAttribute("class", "nav-item")
+//   ulTag.appendChild(liTag)
+  
+//   var aTag= document.createElement('a');// create an A tag
+//   aTag.setAttribute('class', 'nav-link');
+//   aTag.setAttribute('href','http://mrsn.org.uk/'); 
+   
+//   var text2 = document.createTextNode ('Manchester Refugee Support Network');
+//   aTag.appendChild(text2)
+//   liTag.appendChild(aTag)
+//   ulTag.appendChild(liTag);  //<a> added into the <li> element
+
+//    //create new class
+
+                  
+  
+
+
+// var navList1= document.getElementsByClassName('navbar-nav mr-auto')[0];
+// navList1.appendChild(ulTag);
+// }
+  
+
+
+
+//onneille's way
+function addLink2( document ){
+  var listItem= document.createElement('li'); //create list item <li>
+  listItem.className='nav-item' // add classname to Link
+  var textNode = document.createTextNode("Manchester Refugee Support Network")// create a text node
+
+ var link= document.createElement('a') //make an empmty link
+  link.className='nav-link' //add class name to link
+  link.appendChild(textNode); //add text to Link
+
+
+ link.href='http://mrsn.org.uk/'; // add the URL to the link
+  listItem.appendChild(link); //add the link(a tag) to the list
+}
+
+function newButton( document ) {
+var nButton = document.getElements('btn');
+
+var button1 = nButton.createElement("Button");        // Create a <button> element
+var textNode = document.createTextNode("Read More");       // Create a text node
+button1.appendChild(textNode);                                   // Append the text to <button>
+
+}
 if (typeof module !== 'undefined') {
   module.exports = {
     getTitle,
@@ -126,7 +180,9 @@ if (typeof module !== 'undefined') {
     addLink
   }
 };
-//addLink( document )
+//newButton( document )
+//addLink2( document )
+addLink( document )
 italicTitles( document )
 greenLinks(document)
 // console.log('hello');
